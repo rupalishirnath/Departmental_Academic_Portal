@@ -16,6 +16,11 @@ export default function Navbar() {
           <li><Link to="/contact" className="hover:text-green-300">Contact</Link></li>
         </ul>
 
+        <div className="hidden md:flex space-x-4">
+          <Link to="/login" className="bg-white text-green-600 px-4 py-2 rounded-lg hover:bg-gray-200">Login</Link>
+          <Link to="/signup" className="bg-green-800 px-4 py-2 rounded-lg hover:bg-green-700">Sign Up</Link>
+        </div>
+
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "✖" : "☰"}
         </button>
@@ -27,6 +32,8 @@ export default function Navbar() {
           <li><Link to="/about" className="hover:text-green-300" onClick={() => setIsOpen(false)}>About</Link></li>
           <li><Link to="/faculty" className="hover:text-green-300" onClick={() => setIsOpen(false)}>Faculty</Link></li>
           <li><Link to="/contact" className="hover:text-green-300" onClick={() => setIsOpen(false)}>Contact</Link></li>
+          <li><Link to="/login" className="bg-white text-green-600 px-4 py-2 rounded-lg hover:bg-gray-200" onClick={() => setIsOpen(false)}>Login</Link></li>
+          <li><Link to="/signup" className="bg-green-800 px-4 py-2 rounded-lg hover:bg-green-700" onClick={() => setIsOpen(false)}>Sign Up</Link></li>
         </ul>
       )}
     </nav>
