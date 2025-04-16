@@ -25,8 +25,8 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-green-50 flex flex-col items-center p-10">
-      <h1 className="text-4xl font-bold text-green-800 mb-8">📚 Notes Collection</h1>
+    <div className="min-h-screen bg-red-50 flex flex-col items-center p-10">
+      <h1 className="text-4xl font-bold text-red-800 mb-8">📚 Notes Collection</h1>
       <p className="text-lg text-gray-700 mb-10 text-center max-w-2xl">
         Select your academic year to access relevant notes, study materials, and important resources.
       </p>
@@ -36,7 +36,7 @@ const Home = () => {
           <a
             key={index}
             href={year.link}
-            className="bg-green-600 text-white shadow-xl rounded-2xl p-8 text-center hover:bg-green-700 transition-all duration-300 transform hover:scale-105"
+            className="bg-red-400 text-white shadow-xl rounded-2xl p-8 text-center hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
           >
             <h2 className="text-2xl font-semibold mb-3">{year.title}</h2>
             <p className="text-base opacity-90">{year.description}</p>

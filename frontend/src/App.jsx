@@ -7,12 +7,14 @@ import Faculty from "./Components/Faculty";
 import Contact from "./Components/Contact";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
+import FirstYear from "./Components/FirstYear";
 
 const App = () => {
   return (
    <>
     
       <Navbar />
+      <FirstYear/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

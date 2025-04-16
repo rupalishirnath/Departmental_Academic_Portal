@@ -1,63 +1,100 @@
-import { useState } from "react";
-import { loginUser } from "../api/userApi";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const userData = await loginUser(email, password);
-      alert(`Welcome, ${userData.name}`);
-    } catch (error) {
-      console.error(error);
-      alert("Login failed");
+    const response = await fetch("http://localhost:5004/api/auth/login", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: credentials.email,
+        password: credentials.password
+      })
+    });
+
+    const json = await response.json();
+    console.log(json);
+
+    if (json.success) {
+      // Save the token and redirect
+      localStorage.setItem('token', json.authtoken);
+      navigate("/");
+    } else {
+      alert("Invalid credentials");
     }
+  };
+
+  const onChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold text-center text-green-600">Login</h2>
-        <form onSubmit={handleLogin} className="mt-4">
-          <div className="mb-4">
-            <label className="block text-gray-700">Email</label>
-            <input 
-              type="email"
-              placeholder="Enter your email"
-              className="w-full p-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-green-500"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
+      <form
+        className="max-w-md w-full p-6 bg-white shadow-md rounded"
+        onSubmit={handleSubmit}
+      >
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Login</h2>
 
-          <div className="mb-4">
-            <label className="block text-gray-700">Password</label>
-            <input 
-              type="password"
-              placeholder="Enter your password"
-              className="w-full p-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-green-500"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+            Email address
+          </label>
+          <input
+            type="email"
+            name="email"
+            value={credentials.email}
+            onChange={onChange}
+            id="email"
+            placeholder="Enter email"
+            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+          <p className="text-sm text-gray-500 mt-1">
+            We'll never share your email with anyone else.
+          </p>
+        </div>
 
-          <button 
-            type="submit" 
-            className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition duration-300"
-          >
-            Login
-          </button>
-        </form>
+        <div className="mb-4">
+          <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
+            Password
+          </label>
+          <input
+            type="password"
+            name="password"
+            value={credentials.password}
+            onChange={onChange}
+            id="password"
+            placeholder="Password"
+            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        </div>
 
-        <p className="mt-4 text-center text-gray-600">
-          Don't have an account?{" "}
-          <a href="/signup" className="text-green-600 font-semibold hover:underline">Sign up</a>
-        </p>
-      </div>
+        <div className="mb-4 flex items-center">
+          <input
+            type="checkbox"
+            id="check"
+            className="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          />
+          <label htmlFor="check" className="text-gray-700">
+            Check me out
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition"
+        >
+          Submit
+        </button>
+      </form>
     </div>
   );
 };

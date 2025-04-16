@@ -1,12 +1,13 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
-const noteSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  subject: { type: String, required: true },
-  year: { type: String, required: true }, // e.g., "Second Year"
-  examType: { type: String, required: true }, // e.g., "ISE-2"
-  fileUrl: { type: String, required: true }, // Cloud storage or local path
-  uploadedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-}, { timestamps: true });
+const NoteSchema = new mongoose.Schema({
+  title: String,
+  filename: String,
+  year: String,
+  uploadedAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
-export default mongoose.model("Note", noteSchema);
+module.exports = mongoose.model("Note", NoteSchema);
