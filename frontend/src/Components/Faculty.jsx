@@ -76,8 +76,8 @@ const facultyData = [
 
 const Faculty = () => {
   return (
-    <div className="bg-green-100 min-h-screen py-10">
-      <h2 className="text-4xl text-center font-bold text-green-700 mb-6">
+    <div className="bg-red-100 min-h-screen py-10">
+      <h2 className="text-4xl text-center font-bold text-red-700 mb-6">
         Our Faculty Members
       </h2>
       <div className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
@@ -89,7 +89,7 @@ const Faculty = () => {
             <img
               src={faculty.image}
               alt={faculty.name}
-              className="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-green-500"
+              className="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-red-500"
             />
             <h3 className="text-2xl font-semibold text-green-800">
               {faculty.name}

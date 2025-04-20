@@ -2,8 +2,8 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-green-50 flex flex-col items-center p-10">
-      <h1 className="text-4xl font-bold text-green-800 mb-8">📞 Contact Us</h1>
+    <div className="min-h-screen bg-red-50 flex flex-col items-center p-10">
+      <h1 className="text-4xl font-bold text-red-800 mb-8">📞 Contact Us</h1>
 
       {/* Institute Address */}
       <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-green-200 mb-10">

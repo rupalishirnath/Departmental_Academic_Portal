@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-green-50 flex flex-col items-center p-10">
+    <div className="min-h-screen bg-red-50 flex flex-col items-center p-10">
       <h1 className="text-5xl font-bold text-green-800 mb-8">📖 About Our Notes App</h1>
 
       {/* Problem Students Face */}

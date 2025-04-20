@@ -20,7 +20,7 @@ const Register = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold text-center text-green-600">Sign Up</h2>
+        <h2 className="text-2xl font-bold text-center text-red-600">Sign Up</h2>
         <form onSubmit={handleRegister} className="mt-4">
           <div className="mb-4">
             <label className="block text-gray-700">Full Name</label>

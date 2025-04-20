@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-red-50 flex flex-col items-center p-10">
-      <h1 className="text-4xl font-bold text-red-800 mb-6">📚 Notes Collection</h1>
+      <h1 className="text-4xl font-bold text-red-800 mb-6">📚 उत्कृष्ट तांत्रिकज्ञानार्थं जनशक्तेः शिक्षणम् </h1>
       <p className="text-lg text-gray-700 mb-10 text-center max-w-2xl">
         Select your academic year to access relevant notes, study materials, and key resources.
       </p>
