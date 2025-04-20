@@ -7,12 +7,13 @@ import Faculty from "./Components/Faculty";
 import Contact from "./Components/Contact";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
-//import FirstYear from "./Components/FirstYear";
+// import FirstYear from "./Components/FirstYear";
 
 import FirstYear from "./Components/FirstYear";
 import SecondYear from "./Components/SecondYear";
 import ThirdYear from "./Components/ThirdYear";
 import FourthYear from "./Components/FourthYear";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
+      <Footer/>
     </>
   );
 };
