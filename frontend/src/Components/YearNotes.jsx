@@ -48,7 +48,7 @@ const YearNotes = ({ yearTitle }) => {
   return (
     <div className="min-h-screen bg-blue-50 p-10">
       <h1 className="text-3xl font-bold text-center text-blue-800 mb-10">
-        📁 {yearTitle} Notes
+        📁 {yearTitle} PYQ / Notes
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">

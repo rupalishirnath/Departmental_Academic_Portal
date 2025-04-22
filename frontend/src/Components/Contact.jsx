@@ -6,9 +6,9 @@ const Contact = () => {
       <h1 className="text-4xl font-bold text-red-800 mb-8">📞 Contact Us</h1>
 
       {/* Institute Address */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-green-200 mb-10">
-        <h2 className="text-2xl font-semibold text-green-700 mb-4">🏫 Institute Address</h2>
-        <p className="text-lg text-green-700">
+      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-red-300 mb-10">
+        <h2 className="text-2xl font-semibold text-red-700 mb-4">🏫 Institute Address</h2>
+        <p className="text-lg text-red-700">
           Shri Guru Gobind Singhji Institute of Engineering and Technology (SGGSIE&T)
           <br />
           Vishnupuri, Nanded, Maharashtra - 431606, India
@@ -16,9 +16,9 @@ const Contact = () => {
       </div>
 
       {/* Contact Information */}
-      <div className="bg-green-100 shadow-md rounded-lg p-6 w-full max-w-4xl border border-green-300 mb-10">
-        <h2 className="text-2xl font-semibold text-green-800 mb-4">📠 Contact Information</h2>
-        <ul className="text-lg text-green-700 leading-relaxed">
+      <div className="bg-red-100 shadow-md rounded-lg p-6 w-full max-w-4xl border border-red-300 mb-10">
+        <h2 className="text-2xl font-semibold text-red-800 mb-4">📠 Contact Information</h2>
+        <ul className="text-lg text-red-700 leading-relaxed">
           <li>
             <strong>Registrar:</strong> +91-2462-269161
           </li>
@@ -35,9 +35,9 @@ const Contact = () => {
       </div>
 
       {/* Key Contacts */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-green-200 mb-10">
-        <h2 className="text-2xl font-semibold text-green-700 mb-4">👥 Key Contacts</h2>
-        <ul className="text-lg text-green-700 leading-relaxed">
+      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-red-300 mb-10">
+        <h2 className="text-2xl font-semibold text-red-700 mb-4">👥 Key Contacts</h2>
+        <ul className="text-lg text-red-700 leading-relaxed">
           <li>
             <strong>Director:</strong> Dr. M. B. Kokare
             <br />
@@ -85,9 +85,9 @@ const Contact = () => {
       </div>
 
       {/* Additional Contacts */}
-      <div className="bg-green-100 shadow-md rounded-lg p-6 w-full max-w-4xl border border-green-300 mb-10">
-        <h2 className="text-2xl font-semibold text-green-800 mb-4">📬 Additional Contacts</h2>
-        <ul className="text-lg text-green-700 leading-relaxed">
+      <div className="bg-red-100 shadow-md rounded-lg p-6 w-full max-w-4xl border border-red-300 mb-10">
+        <h2 className="text-2xl font-semibold text-red-800 mb-4">📬 Additional Contacts</h2>
+        <ul className="text-lg text-red-700 leading-relaxed">
           <li>
             <strong>Department of Production Engineering - Head:</strong> Dr. P. R. Kubade
             <br />
@@ -111,11 +111,11 @@ const Contact = () => {
       </div>
 
       {/* Website */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-green-200">
-        <h2 className="text-2xl font-semibold text-green-700 mb-4">🌐 Website</h2>
-        <p className="text-lg text-green-700">
+      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-red-300">
+        <h2 className="text-2xl font-semibold text-red-700 mb-4">🌐 Website</h2>
+        <p className="text-lg text-red-700">
           For more information, visit our official website:{" "}
-          <a href="https://www.sggs.ac.in" className="text-green-800 underline">
+          <a href="https://www.sggs.ac.in" className="text-red-800 underline">
             www.sggs.ac.in
           </a>
         </p>

@@ -3,74 +3,74 @@ import React from "react";
 const About = () => {
   return (
     <div className="min-h-screen bg-red-50 flex flex-col items-center p-10">
-      <h1 className="text-5xl font-bold text-green-800 mb-8">📖 About Our Notes App</h1>
+      <h1 className="text-5xl font-bold text-red-800 mb-8">📖 About Departmental Academic Portal</h1>
 
-      {/* Problem Students Face */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-green-200 mb-10">
-        <h2 className="text-3xl font-semibold text-green-700 mb-4">💭 The Struggle Every Student Faces</h2>
-        <p className="text-lg text-green-700 leading-relaxed">
-          As exams approach, students often find themselves searching for well-organized notes. The challenge is real—  
-          some students have incomplete class notes, others rely on their friends, and many don’t even know which faculty members can guide them best.  
-          In a rush, students waste hours gathering notes from multiple sources, yet they still miss out on crucial topics.
+      {/* Introduction */}
+      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-red-300 mb-10">
+        <h2 className="text-3xl font-semibold text-red-700 mb-4">💡 What Is This Portal?</h2>
+        <p className="text-lg text-red-700 leading-relaxed">
+          The Departmental Academic Portal is a MERN-based web application built specifically for Electronics and Telecommunication Engineering students. 
+          It provides a centralized platform to access and download previous year question papers (PYQs), ensuring better preparation and academic performance.
         </p>
-        <p className="text-lg text-green-700 leading-relaxed mt-4">
-          Imagine this: **It’s just a week before your exams, and you’re struggling to find proper notes for an important subject.**  
-          You ask classmates, scroll through WhatsApp groups, and visit faculty offices, only to end up with unorganized PDFs and handwritten notes.  
-          **Wouldn’t it be great if all your study materials were in one place?**
+        <p className="text-lg text-red-700 leading-relaxed mt-4">
+          With its clean, responsive, and user-friendly interface, students can conveniently search and retrieve academic materials categorized by semester and exam type (ISE1, ISE2, END).
         </p>
       </div>
 
-      {/* Solution Offered by Notes App */}
-      <div className="bg-green-100 shadow-md rounded-lg p-6 w-full max-w-4xl border border-green-300 mb-10">
-        <h2 className="text-3xl font-semibold text-green-800 mb-4">🎯 Our Mission: Making Notes Easily Accessible</h2>
-        <p className="text-lg text-green-700 leading-relaxed">
-          We understand how stressful exam time can be, and that’s why we built this **Notes App**—a **one-stop platform**  
-          where you can access **well-organized, faculty-recommended study materials** instantly.  
+      {/* Problem Statement */}
+      <div className="bg-red-100 shadow-md rounded-lg p-6 w-full max-w-4xl border border-red-300 mb-10">
+        <h2 className="text-3xl font-semibold text-red-800 mb-4">❌ The Challenge Students Face</h2>
+        <p className="text-lg text-red-700 leading-relaxed">
+          Students often struggle to find previous year question papers due to the lack of a centralized resource. Informal sharing methods such as WhatsApp groups or photocopies lead to inconsistent and inefficient access to important academic materials.
         </p>
-        <p className="text-lg text-green-700 leading-relaxed mt-4">
-          Instead of wasting valuable time searching for notes, students can now **download high-quality study materials in seconds**  
-          and focus on what really matters—understanding concepts and acing exams! 🚀
+        <p className="text-lg text-red-700 leading-relaxed mt-4">
+          This portal addresses that gap by offering a structured solution that saves time, increases accessibility, and enhances exam preparation.
         </p>
       </div>
 
-      {/* Key Features */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-green-200 mb-10">
-        <h2 className="text-3xl font-semibold text-green-700 mb-4">🚀 Key Features of Our Notes App</h2>
-        <ul className="list-disc list-inside text-green-700 space-y-3 text-lg">
-          <li>📚 **Comprehensive Notes** – Access study materials for every subject, sorted by year and semester.</li>
-          <li>👨‍🏫 **Know Your Faculty** – Find out which professor teaches what, along with their expertise and notes.</li>
-          <li>🔍 **Easy Search & Filter** – Quickly locate notes by faculty name, subject, or topic.</li>
-          <li>📥 **Download PDFs** – Save notes for offline access anytime, anywhere.</li>
-          <li>💡 **Exam Tips & Guidance** – Learn from faculty-recommended strategies to score better in exams.</li>
+      {/* Objective */}
+      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-red-300 mb-10">
+        <h2 className="text-3xl font-semibold text-red-700 mb-4">🎯 Our Objectives</h2>
+        <ul className="list-disc list-inside text-red-700 space-y-3 text-lg">
+          <li>📚 Centralize access to PYQs for all semesters.</li>
+          <li>📱 Build a responsive and user-friendly portal using MERN stack.</li>
+          <li>🔐 Ensure secure storage and smooth document handling.</li>
+          <li>🧑‍🏫 Foster collaboration between students and faculty.</li>
+          <li>🔧 Lay the groundwork for future features like notes, event updates, and faculty uploads.</li>
         </ul>
       </div>
 
-      {/* Why This Matters */}
-      <div className="bg-green-100 shadow-md rounded-lg p-6 w-full max-w-4xl border border-green-300 mb-10">
-        <h2 className="text-3xl font-semibold text-green-800 mb-4">🤔 Why This Matters for Every Student</h2>
-        <p className="text-lg text-green-700 leading-relaxed">
-          Many students fail to perform well in exams **not because they don’t study**,  
-          but because they spend too much time **collecting** study materials rather than **studying them.**
+      {/* Tech Stack Summary */}
+      <div className="bg-red-100 shadow-md rounded-lg p-6 w-full max-w-4xl border border-red-300 mb-10">
+        <h2 className="text-3xl font-semibold text-red-800 mb-4">🛠️ Tech Stack & Architecture</h2>
+        <p className="text-lg text-red-700 leading-relaxed">
+          The frontend is built with React.js and Vite for a fast and dynamic UI. The backend uses Express.js and Node.js to handle logic and file management, while MongoDB stores document metadata. Axios is used for smooth API communication.
         </p>
-        <p className="text-lg text-green-700 leading-relaxed mt-4">
-          By providing a **centralized and structured** platform for academic resources,  
-          we eliminate the confusion and ensure that **no student is left behind** in the preparation process.
+        <p className="text-lg text-red-700 leading-relaxed mt-4">
+          This modular architecture enables real-time updates, scalability, and future enhancements like exam tips and syllabus uploads.
         </p>
       </div>
 
-      {/* Final Message */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-green-200">
-        <h2 className="text-3xl font-semibold text-green-700 mb-4">📌 Our Promise to Students</h2>
-        <p className="text-lg text-green-700 leading-relaxed">
-          We are committed to making your learning experience **simpler, smarter, and stress-free.**  
-          Our notes app is designed to ensure that **you have everything you need to succeed, right at your fingertips.**
+      {/* Advantages */}
+      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl border border-red-300 mb-10">
+        <h2 className="text-3xl font-semibold text-red-700 mb-4">✅ Why This Portal Matters</h2>
+        <ul className="list-disc list-inside text-red-700 space-y-3 text-lg">
+          <li>⏱️ Saves time and reduces dependency on physical notes.</li>
+          <li>📂 Categorized access by subject, semester, and exam type.</li>
+          <li>🌱 Eco-friendly solution with reduced paper usage.</li>
+          <li>📥 Downloadable content for offline preparation.</li>
+          <li>📶 Available 24/7—no more library restrictions!</li>
+        </ul>
+      </div>
+
+      {/* Conclusion */}
+      <div className="bg-red-100 shadow-md rounded-lg p-6 w-full max-w-4xl border border-red-300">
+        <h2 className="text-3xl font-semibold text-red-800 mb-4">📌 Final Note</h2>
+        <p className="text-lg text-red-700 leading-relaxed">
+          This portal is a stepping stone towards digital transformation in academic resource sharing. While challenges like data storage and responsive design were present, the system demonstrates innovation and serves as a solid base for future upgrades.
         </p>
-        <p className="text-lg text-green-700 leading-relaxed mt-4">
-          So, the next time exams are near, you won’t have to worry about **“Where do I get notes from?”**  
-          Instead, you’ll have a **trusted source** that provides everything you need in an **organized and efficient** way.  
-        </p>
-        <p className="text-xl font-semibold text-green-800 mt-6 text-center">
-          📚 **Happy Studying & Best of Luck for Your Exams!** 🎉
+        <p className="text-xl font-semibold text-red-800 mt-6 text-center">
+          📚 Happy Learning! Let’s make exam prep smarter and simpler! 🎉
         </p>
       </div>
     </div>

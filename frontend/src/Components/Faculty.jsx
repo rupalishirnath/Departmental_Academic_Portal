@@ -30,7 +30,7 @@ const facultyData = [
     image: "../Pics/tamboli.webp",
   },
   {
-    name: "Bhalerao Sir",
+    name: "Bhalerao Sir (HOD ENTC)",
     subject: "Digital Electronics",
     qualification: "Ph.D completed in 2008",
     description: "Deep knowledge and clear explanations.",
@@ -58,47 +58,51 @@ const facultyData = [
   },
   {
     name: "Padma Mam",
-    subject: "dvd",
+    subject: "DVD",
     description: "Patient and ensures deep understanding.",
     image: "../Pics/padma.webp",
   },
   {
     name: "Nitin Sir",
-    subject: "CONTOL SYSTEM & DATA STRUCTURES",
+    subject: "CONTROL SYSTEM & DATA STRUCTURES",
     qualification: "M.Tech in Electronics",
     description: "Explains real-world applications effectively.",
     image: "../Pics/nitin.webp",
   },
- 
-
-  
 ];
 
 const Faculty = () => {
   return (
-    <div className="bg-red-100 min-h-screen py-10">
-      <h2 className="text-4xl text-center font-bold text-red-700 mb-6">
-        Our Faculty Members
+    <div className="bg-gradient-to-b from-red-50 via-red-100 to-red-200 min-h-screen py-14 px-6">
+      <h2 className="text-5xl text-center font-extrabold text-red-800 mb-12 drop-shadow-lg">
+        🌟 Our Esteemed Faculty
       </h2>
-      <div className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+      <div className="max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {facultyData.map((faculty, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-lg p-6 text-center"
+            className="group bg-white rounded-3xl p-6 shadow-xl transform transition duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:shadow-red-400 border border-red-200 hover:border-red-500 hover:bg-red-50"
           >
             <img
               src={faculty.image}
               alt={faculty.name}
-              className="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-red-500"
+              className="w-32 h-32 mx-auto rounded-full border-4 border-red-500 object-cover mb-4 transition duration-300 group-hover:scale-105 shadow-md"
             />
-            <h3 className="text-2xl font-semibold text-green-800">
-              {faculty.name}
-            </h3>
-            <p className="text-green-600 font-medium">{faculty.subject}</p>
-            <p className="text-gray-700 text-sm mt-2">
-              {faculty.qualification}
+            <h3 className="text-2xl font-bold text-red-700 group-hover:text-red-900">{faculty.name}</h3>
+            <p className="text-sm text-red-600 mt-1 font-semibold">
+              📘 {faculty.subject}
             </p>
-            <p className="text-gray-600 mt-2 italic">{faculty.description}</p>
+            {faculty.qualification && (
+              <p className="text-gray-700 text-sm mt-1">🎓 {faculty.qualification}</p>
+            )}
+            <p className="text-gray-600 mt-3 italic text-sm leading-relaxed">
+              {faculty.description}
+            </p>
+            <div className="mt-4 flex justify-center">
+              <span className="px-3 py-1 text-xs rounded-full bg-red-100 text-red-700 font-semibold">
+                Faculty Member
+              </span>
+            </div>
           </div>
         ))}
       </div>
