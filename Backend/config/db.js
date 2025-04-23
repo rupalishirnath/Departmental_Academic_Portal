@@ -1,17 +1,18 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const MongoUri = 'mongodb://localhost:27017/mini';
+const mongoURI = 'mongodb://localhost:27017/mini';
 
-const connectToDB = async () =>{
-        try {
-          await mongoose.connect(MongoUri , {
-            useNewUrlParser : true ,
-            useUnifiedTopology : true,
-          }),
-          console.log("Connected to db Sir");
-        } catch (error) {
-          console.log("Failed to connect", error);
-        }
-}
+const connectToMongo = async () => {
+    try {
+        await mongoose.connect(mongoURI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log("Connected to Mongo Successfully");
+    } catch (error) {
+        console.error("MongoDB connection error:", error.message);
+        process.exit(1); // Exit process with failure
+    }
+};
 
-module.exports = connectToDB;
+module.exports = connectToMongo;

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import sggs from "../assets/bw sggs.png"; // Ensure this path is correct
+import folk from '../assets/studentimg.png'
 
 const Home = () => {
   const years = [
@@ -30,6 +31,19 @@ const Home = () => {
     <div className="flex flex-col min-h-screen justify-between bg-red-50">
       {/* Main content */}
       <main className="flex-grow flex flex-col items-center px-6 py-16">
+
+      <div className="flex items-center justify-between w-full">
+                <img src={folk} alt="folk lok" className="w-1/3 h-auto rounded-lg shadow-xl" />
+                <div className="w-1/6"></div> {/* Space between image and text */}
+                <p className="text-3xl font-extrabold text-white p-6 bg-red-400 rounded-2xl shadow-lg animate-bounce ring-4 ring-white ring-opacity-50 w-1/2">
+                    Welcome to the  utility web page of our EXTC department... Hope you are doing well!
+                </p>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         <h1 className="text-5xl font-bold text-red-800 mb-10 text-center">
           📚 उत्कृष्ट तांत्रिकज्ञानार्थं जनशक्तेः शिक्षणम्
         </h1>

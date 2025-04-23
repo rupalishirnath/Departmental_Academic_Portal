@@ -1,78 +1,85 @@
-import { useState } from "react";
-//import { registerUser } from "../api/userApi";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Register = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Signup = () => {
+  const [credentials, setCredentials] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const navigate = useNavigate();
 
-  const handleRegister = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const userData = await registerUser({ name, email, password });
-      alert(`Account created for ${userData.name}`);
-    } catch (error) {
-      console.error(error);
-      alert("Registration failed");
+    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(credentials),
+    });
+
+    const json = await response.json();
+    if (json.success) {
+      localStorage.setItem("token", json.authtoken);
+      navigate("/");
+    } else {
+      alert("Now... Login with same credentials to proceed");
     }
   };
 
+  const onChange = (e) =>
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold text-center text-red-600">Sign Up</h2>
-        <form onSubmit={handleRegister} className="mt-4">
-          <div className="mb-4">
-            <label className="block text-gray-700">Full Name</label>
-            <input 
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-100 to-red-200 px-4">
+      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+        <h2 className="text-3xl font-bold text-green-700 mb-6 text-center">
+          Sign Up
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div>
+            <label className="block mb-1 font-medium">Name</label>
+            <input
               type="text"
-              placeholder="Enter your full name"
-              className="w-full p-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-green-500"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              name="name"
+              value={credentials.name}
+              onChange={onChange}
               required
+              className="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400"
             />
           </div>
-
-          <div className="mb-4">
-            <label className="block text-gray-700">Email</label>
-            <input 
+          <div>
+            <label className="block mb-1 font-medium">Email</label>
+            <input
               type="email"
-              placeholder="Enter your email"
-              className="w-full p-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-green-500"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={credentials.email}
+              onChange={onChange}
               required
+              className="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400"
             />
           </div>
-
-          <div className="mb-4">
-            <label className="block text-gray-700">Password</label>
-            <input 
+          <div>
+            <label className="block mb-1 font-medium">Password</label>
+            <input
               type="password"
-              placeholder="Create a password"
-              className="w-full p-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-green-500"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              minLength={5}
+              value={credentials.password}
+              onChange={onChange}
               required
+              className="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400"
             />
           </div>
-
-          <button 
-            type="submit" 
-            className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition duration-300"
+          <button
+            type="submit"
+            className="w-full bg-green-700 hover:bg-green-800 text-white font-semibold py-2 rounded-xl shadow transition duration-300"
           >
-            Sign Up
+            Create Account
           </button>
         </form>
-
-        <p className="mt-4 text-center text-gray-600">
-          Already have an account?{" "}
-          <a href="/login" className="text-green-600 font-semibold hover:underline">Login</a>
-        </p>
       </div>
     </div>
   );
 };
 
-export default Register;
+export default Signup;

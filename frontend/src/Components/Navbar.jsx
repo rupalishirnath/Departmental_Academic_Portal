@@ -1,6 +1,24 @@
 import { useState } from "react";
 import sggs from "../assets/bw sggs.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+function LogoutButton() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
+  return (
+    <button
+      onClick={handleLogout}
+      className="bg-red-600 px-4 py-2 font-semibold rounded-xl shadow hover:bg-red-500 transition duration-300"
+    >
+      Logout
+    </button>
+  );
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,11 +42,13 @@ export default function Navbar() {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.08)";
-              e.currentTarget.style.boxShadow = "0 8px 18px rgba(0, 0, 0, 0.3)";
+              e.currentTarget.style.boxShadow =
+                "0 8px 18px rgba(0, 0, 0, 0.3)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "scale(1)";
-              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.2)";
+              e.currentTarget.style.boxShadow =
+                "0 4px 12px rgba(0, 0, 0, 0.2)";
             }}
           />
         </Link>
@@ -61,6 +81,7 @@ export default function Navbar() {
           >
             Sign Up
           </Link>
+          <LogoutButton />
         </div>
 
         {/* Mobile Hamburger */}
@@ -107,6 +128,9 @@ export default function Navbar() {
             >
               Sign Up
             </Link>
+          </li>
+          <li>
+            <LogoutButton />
           </li>
         </ul>
       </div>

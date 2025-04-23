@@ -1,28 +1,24 @@
-const mongoose = require('mongoose'); // Import Mongoose
-const { Schema } = mongoose; // Destructure Schema from Mongoose
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-// Define the User schema
 const UserSchema = new Schema({
-    name: {
+    name:{
         type: String,
         required: true
     },
-    email: {
+    email:{
         type: String,
         required: true,
         unique: true
     },
-    password: {
+    password:{
         type: String,
         required: true
     },
-    date: {
+    date:{
         type: Date,
         default: Date.now
-    }
-});
-
-// Export the User model
-const User = mongoose.model('User', UserSchema);
-User.createIndexes()
-module.exports = User;
+    },
+  });
+  const User = mongoose.model('user', UserSchema);
+  module.exports = User;
